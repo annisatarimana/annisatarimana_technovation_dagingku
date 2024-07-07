@@ -1,5 +1,5 @@
 
-## <span style='color:red;'>Laravel</span> Cake Shop Website Project - <span style='color:pink;'>Halal Way</span>
+## <span style='color:red;'>Laravel</span>  Website Project - <span style='color:pink;'>Dagingku</span>
 
 
 ## Packages Used
