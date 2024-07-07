@@ -1,62 +1,60 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "symfony/translation",
+    "type": "library",
+    "description": "Provides tools to internationalize your application",
+    "keywords": [],
+    "homepage": "https://symfony.com",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
     "require": {
-        "php": "^7.3|^8.0",
-        "fideloper/proxy": "^4.4",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.40",
-        "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.2",
-        "phpmailer/phpmailer": "^6.6"
-
+        "php": ">=8.1",
+        "symfony/deprecation-contracts": "^2.5|^3",
+        "symfony/polyfill-mbstring": "~1.0",
+        "symfony/translation-contracts": "^2.5|^3.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.5",
-        "facade/ignition": "^2.5",
-        "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.2",
-        "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "nikic/php-parser": "^4.18|^5.0",
+        "symfony/config": "^5.4|^6.0|^7.0",
+        "symfony/console": "^5.4|^6.0|^7.0",
+        "symfony/dependency-injection": "^5.4|^6.0|^7.0",
+        "symfony/http-client-contracts": "^2.5|^3.0",
+        "symfony/http-kernel": "^5.4|^6.0|^7.0",
+        "symfony/intl": "^5.4|^6.0|^7.0",
+        "symfony/polyfill-intl-icu": "^1.21",
+        "symfony/routing": "^5.4|^6.0|^7.0",
+        "symfony/service-contracts": "^2.5|^3",
+        "symfony/yaml": "^5.4|^6.0|^7.0",
+        "symfony/finder": "^5.4|^6.0|^7.0",
+        "psr/log": "^1|^2|^3"
+    },
+    "conflict": {
+        "symfony/config": "<5.4",
+        "symfony/dependency-injection": "<5.4",
+        "symfony/http-client-contracts": "<2.5",
+        "symfony/http-kernel": "<5.4",
+        "symfony/service-contracts": "<2.5",
+        "symfony/twig-bundle": "<5.4",
+        "symfony/yaml": "<5.4",
+        "symfony/console": "<5.4"
+    },
+    "provide": {
+        "symfony/translation-implementation": "2.3|3.0"
     },
     "autoload": {
-        "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
+        "files": [ "Resources/functions.php" ],
+        "psr-4": { "Symfony\\Component\\Translation\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
         ]
     },
-    "extra": {
-        "laravel": {
-            "dont-discover": []
-        }
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "dev"
 }
